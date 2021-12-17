@@ -1,0 +1,49 @@
+body { font-family: 'Titillium+Web', sans-serif; margin: 0; padding: 0;}
+.bg-light {background-color: #fff!important;}
+#map { position: fixed; top: 0; bottom: 0; width: 61.6%; }
+.map_large {
+width: 100%;
+}
+.map-menu {
+  position: fixed;
+  background: #efefef;
+  padding: 10px;
+}
+#fit {
+  display: block;
+  position: relative;
+  margin: 0px;
+  width: 100%;
+  padding: 0px;
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: #AC1865;
+  opacity: 0.9;
+}
+
+.legend {
+  background-color: #fff;
+  border-radius: 3px;
+  bottom: 40px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  font: 12px/20px;
+  padding: 10px;
+  position: absolute;
+  right: 10px;
+  z-index: 1;
+}
+
+.legend h4 {
+  margin: 0 0 10px;
+}
+
+.legend div span {
+  border-radius: 50%;
+  display: inline-block;
+  height: 10px;
+  margin-right: 5px;
+  width: 10px;
+}
