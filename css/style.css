@@ -9,6 +9,25 @@ body { font-family: 'Titillium+Web', sans-serif; margin: 0; padding: 0;}
   background: #efefef;
   padding: 10px;
 }
+#fit {
+  display: block;
+  position: relative;
+  margin: 0px;
+  width: 100%;
+  padding: 0px;
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: #AC1865;
+  opacity: 0.9;
+}
+.map-menu {
+  position: fixed;
+  background: #efefef;
+  padding: 10px;
+}
 
 .legend {
   background-color: #fff;

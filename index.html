@@ -12,34 +12,11 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+  <script language="JavaScript" type="text/JavaScript" src="js/map_script.js"></script>
 </head>
 <body>
   <style>
-  body { font-family: 'Titillium+Web', sans-serif; margin: 0; padding: 0;}
-  .bg-light {background-color: #fff!important;}
-  #map { position: fixed; top: 0; bottom: 0; width: 61.6%; }
-  .map_large {
-  width: 100%;
-  }
-  .map-menu {
-    position: fixed;
-    background: #efefef;
-    padding: 10px;
-  }
-  #fit {
-    display: block;
-    position: relative;
-    margin: 0px;
-    width: 100%;
-    padding: 0px;
-    border: none;
-    border-radius: 3px;
-    font-size: 12px;
-    text-align: center;
-    color: #fff;
-    background: #AC1865;
-    opacity: 0.9;
-  }
+
 </style>
 
 <div id="map" class="map">
@@ -59,11 +36,11 @@
   <button id="fit">Estensione completa sito UNESCO</button>
 </div>
 <div id="features" class="features">
-  <div class="d-flex flex-md-row justify-content-center mt-2">
+  <!--<div class="d-flex flex-md-row justify-content-center mt-2">
     <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
       <img src="assets/img/Logo_nuovo_small.png" alt="" height="54" class="mx-auto d-block">
     </a>
-  </div>
+  </div>-->
   <section id="arte-rupestre-della-valle-camonica-1" class='active'>
     <h4>Arte rupestre della Valle Camonica</h4>
     <p class="step">
@@ -223,11 +200,11 @@
       <img src="assets/img/10/2.webp" class="img-fluid sidebar" alt="Opere di difesa veneziane tra il XVI ed il XVII secolo: Stato da Terra – Stato da Mar Occidentale">
     </p>
   </section>
-  <div class="d-flex flex-md-row justify-content-center mt-2">
+  <!--><div class="d-flex flex-md-row justify-content-center mt-2">
     <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
       <img src="assets/img/Logo_nuovo_small.png" alt="" height="54" class="mx-auto d-block">
     </a>
-  </div>
+  </div>-->
 </div>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ3VlcmN1c2d1byIsImEiOiJja29vYTVmdXIwMnJjMm5vanBrb2dwZmp1In0.GFGEzzSYk1QNXmqJ-9lhjA';
@@ -240,7 +217,7 @@ zoom: 12 // starting zoom
 // bearing: 80,
 });
 </script>
-<script language=”JavaScript” type=”text/JavaScript” src=js/map_script.js”></script>
+<script language="JavaScript" type="text/JavaScript" src="js/map_script.js"></script>
 </body>
 
 </html>
