@@ -169,7 +169,7 @@ var geojson;
 function addSource() {
 map.addSource('lombardia_aree', {
 'type': 'geojson',
-'data': 'assets/json/zones.geojson'
+'data': 'assets/json/zones.geojson '
 });
 // Mapbox default DEM source
 map.addSource('mapbox-dem', {
@@ -195,9 +195,9 @@ map.addLayer({
   'match',
   ['get', 'TIPO_AREA'],
   'Buffer Zone',
-  '#f4a582',
+  '#92c5de',
   'Componente',
-  '#f768a1',
+  '#f4a582',
   '#ccc'
 ],
 //'fill-color': '#0080ff', // blue color fill
@@ -219,9 +219,9 @@ map.addLayer({
   'match',
   ['get', 'TIPO_AREA'],
   'Buffer Zone',
-  '#f4a582',
+  '#92c5de',
   'Componente',
-  '#f768a1',
+  '#f4a582',
   '#ccc'
 ],
 }
