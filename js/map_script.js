@@ -169,7 +169,7 @@ var geojson;
 function addSource() {
 map.addSource('lombardia_aree', {
 'type': 'geojson',
-'data': 'https://github.com/guercusguo/unesco-virtual-lom/blob/a55f805a69e21b77ffbafac22b843cedb5a291e3/assets/json/zones.geojson'
+'data': 'assets/json/zones.geojson'
 });
 // Mapbox default DEM source
 map.addSource('mapbox-dem', {
