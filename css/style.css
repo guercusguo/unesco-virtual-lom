@@ -1,4 +1,4 @@
-body { font-family: 'Titillium+Web', sans-serif; margin: 0; padding: 0;}
+body { font-family: 'Titillium Web', sans-serif; margin: 0; padding: 0;}
 .bg-light {background-color: #fff!important;}
 #map { position: fixed; top: 0; bottom: 0; width: 61.6%; }
 .map_large {
@@ -20,7 +20,7 @@ body { font-family: 'Titillium+Web', sans-serif; margin: 0; padding: 0;}
   font-size: 12px;
   text-align: center;
   color: #fff;
-  background: #AC1865;
+  background: #297A38;
   opacity: 0.9;
 }
 .map-menu {
@@ -105,20 +105,6 @@ section:last-child {
     bottom: 0;
     width: 100%;
   }
-}
-#fit {
-  display: block;
-  position: relative;
-  margin: 0px;
-  width: 100%;
-  padding: 0px;
-  border: none;
-  border-radius: 3px;
-  font-size: 12px;
-  text-align: center;
-  color: #fff;
-  background: #AC1865;
-  opacity: 0.9;
 }
 
 .legend {
