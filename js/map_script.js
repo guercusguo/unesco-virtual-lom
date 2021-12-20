@@ -4,7 +4,7 @@ var chapters = {
 duration: 7000,
 bearing: 0,
 center: [10.342637,46.034293],
-zoom: 13,
+zoom: 14,
 speed: 0.6,
 pitch: 40
 },
@@ -20,7 +20,7 @@ pitch: 40
 duration: 7000,
 bearing: 0,
 center: [9.536066,45.597665],
-zoom: 13,
+zoom: 14,
 speed: 0.6,
 pitch: 40
 },
@@ -28,7 +28,7 @@ pitch: 40
 duration: 7000,
 center: [9.535957,45.598542],
 bearing: 0,
-zoom: 12,
+zoom: 15,
 speed: 0.6,
 pitch: 40
 },
@@ -36,7 +36,7 @@ pitch: 40
 duration: 7000,
 bearing: 0,
 center: [9.170618,45.466237],
-zoom: 12,
+zoom: 14,
 speed: 0.6,
 pitch: 40
 },
@@ -60,7 +60,7 @@ pitch: 40
 duration: 7000,
 bearing: 0,
 center: [8.792243,45.860223],
-zoom: 13,
+zoom: 14,
 speed: 0.6,
 pitch: 40
 },
@@ -68,7 +68,7 @@ pitch: 40
 duration: 7000,
 center: [8.949512,45.919671],
 bearing: 0,
-zoom: 12,
+zoom: 15,
 speed: 0.6,
 pitch: 40
 },
@@ -76,7 +76,7 @@ pitch: 40
 duration: 7000,
 bearing: 0,
 center: [8.953134,45.890505],
-zoom: 12,
+zoom: 14,
 speed: 0.6,
 pitch: 40
 },
@@ -84,7 +84,7 @@ pitch: 40
 duration: 7000,
 bearing: 0,
 center: [10.802641,45.161125],
-zoom: 13,
+zoom: 14,
 speed: 0.6,
 pitch: 40
 },
@@ -92,7 +92,7 @@ pitch: 40
 duration: 7000,
 bearing: 0,
 center: [10.489841,44.999562],
-zoom: 15,
+zoom: 14,
 speed: 0.6,
 pitch: 40
 },
@@ -100,7 +100,7 @@ pitch: 40
 duration: 7000,
 bearing: 0,
 center: [10.125940,46.261320],
-zoom: 13,
+zoom: 14,
 speed: 0.6,
 pitch: 40
 },
@@ -116,7 +116,7 @@ pitch: 40
 duration: 7000,
 bearing: 0,
 center: [8.718441,45.811708],
-zoom: 12,
+zoom: 14,
 speed: 0.6,
 pitch: 40
 },
@@ -124,7 +124,7 @@ pitch: 40
 duration: 7000,
 bearing: 0,
 center: [10.494371,45.547956],
-zoom: 13,
+zoom: 14,
 speed: 0.6,
 pitch: 40
 },
@@ -132,7 +132,7 @@ pitch: 40
 duration: 7000,
 bearing: 0,
 center: [7.9940737,44.6523347],
-zoom: 15,
+zoom: 14,
 speed: 0.6,
 pitch: 40
 },
@@ -140,7 +140,7 @@ pitch: 40
 duration: 7000,
 bearing: 0,
 center: [8.857443,45.728933],
-zoom: 13,
+zoom: 14,
 speed: 0.6,
 pitch: 40
 },
@@ -148,7 +148,7 @@ pitch: 40
 duration: 7000,
 center: [9.665115,45.703017],
 bearing: 0,
-zoom: 12,
+zoom: 14,
 speed: 0.6,
 pitch: 40
 },
@@ -156,7 +156,7 @@ pitch: 40
 duration: 7000,
 bearing: 0,
 center: [9.663098,45.701167],
-zoom: 12,
+zoom: 14,
 speed: 0.6,
 pitch: 40
 }
@@ -169,7 +169,7 @@ var geojson;
 function addSource() {
 map.addSource('lombardia_aree', {
 'type': 'geojson',
-'data': 'assets/json/zones.geojson'
+'data': '/assets/json/zones.geojson'
 });
 // Mapbox default DEM source
 map.addSource('mapbox-dem', {
@@ -214,8 +214,15 @@ map.addLayer({
 'visibility': 'visible'
 },
 'paint': {
-'line-color': '#000',
-'line-width': 1
+'line-color': [
+  'match',
+  ['get', 'TIPO_AREA'],
+  'Buffer zone',
+  '#feebe2',
+  'Componente',
+  '#f768a1',
+  '#ccc'
+],
 }
 });
 map.addLayer({
@@ -280,11 +287,10 @@ map.setStyle('mapbox://styles/guercusguo/' + layerId);
 };
 for (var i = 0; i < inputs.length; i++) {
 inputs[i].onclick = switchLayer; }
-// still incomplete
 // End of Basemap switch
 map.addControl(new mapboxgl.NavigationControl());
 
-// START of popup on click for pointal features
+// START of popup on click for areal features
 map.on('load', function () {
 map.on('click', 'lombardia_aree', function (e) {
 var coordinates = e.features[0].geometry.coordinates.slice();
