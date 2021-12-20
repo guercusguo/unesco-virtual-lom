@@ -5,70 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lombardia | Virtual Tour</title>
   <meta name="description" content="Strumenti a supporto della didattica.">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
   <link type="text/css" href="css/style.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
-  <script language=”JavaScript” type=”text/JavaScript” src=js/map_script.js”></script>
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
 </head>
 <body>
   <style>
-
-  #features {
-    width: 38vw;
-    margin-left: 62vw;
-    height: 100%;
-    overflow-y: scroll;
-    background-color: #ffffff;
-    transition: 1s ease;
+  body { font-family: 'Titillium+Web', sans-serif; margin: 0; padding: 0;}
+  .bg-light {background-color: #fff!important;}
+  #map { position: fixed; top: 0; bottom: 0; width: 61.6%; }
+  .map_large {
+  width: 100%;
+  }
+  .map-menu {
+    position: fixed;
+    background: #efefef;
+    padding: 10px;
+  }
+  #fit {
+    display: block;
     position: relative;
-  }
-  .sidebar_hide {
-    width: 0%;
-  }
-  section {
-    padding: 25px 50px;
-    line-height: 25px;
-    border-bottom: 1px solid #ddd;
-    opacity: 0.25;
-    font-size: 13px;
-  }
-  section.active {
-    opacity: 1;
-  }
-  section:last-child {
-    border-bottom: none;
-    margin-bottom: 10vh;
-  }
-  .sidebar {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  .mapboxgl-popup  {
-    max-width: 400px;
-    font-weight: bold;
-  }
-  @media (max-width: 750px) {
-    #features {
-      width: 100vw;
-      margin: 0 auto;
-      background-color:rgba(255,255,255,0.0);
-      color: #000;
-    }
-    .step {
-      padding-bottom: 90vh;
-      offset-position: bottom 10px top 10 px;
-    }
-    #map {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      width: 100%;
-    }
+    margin: 0px;
+    width: 100%;
+    padding: 0px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #AC1865;
+    opacity: 0.9;
   }
 </style>
 
@@ -103,7 +73,7 @@
       L’espressione artistica dell’<em>Homo sapiens</em> si manifestò in due modi principali: sulle pareti all’interno delle grotte (arte parietale), e su rocce affioranti dal terreno o pareti rocciose esterne alla mercé degli agenti atmosferici (arte rupestre). Le più alte testimonianze mondiali dell’arte parietale preistorica si trovano ad Altamira in Spagna e a Lascaux in Francia, mentre il complesso dell’arte rupestre della Valle Camonica è considerato il più importante a livello mondiale, per la quantità di incisioni, per la sua enorme varietà e per la lunghezza dell’arco temporale che copre.
     </p>
   </section>
-  <section id="arte-rupestre-della-valle-camonica-2" class='active'>
+  <section id="arte-rupestre-della-valle-camonica-2">
     <p class="step">
       <img src="assets/img/1/2.webp" class="img-fluid sidebar" alt="Arte rupestre della Valle Camonica">
       <br>
@@ -259,6 +229,17 @@
     </a>
   </div>
 </div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiZ3VlcmN1c2d1byIsImEiOiJja29vYTVmdXIwMnJjMm5vanBrb2dwZmp1In0.GFGEzzSYk1QNXmqJ-9lhjA';
+var map = new mapboxgl.Map({
+container: 'map', // container ID
+style: 'mapbox://styles/guercusguo/ckqc3h3i600gu18pgwzh0qpjt', // style URL
+center: [10.342637,46.034293], // starting position
+zoom: 12 // starting zoom
+// pitch: 85,
+// bearing: 80,
+});
+</script>
 <script language=”JavaScript” type=”text/JavaScript” src=js/map_script.js”></script>
 </body>
 

@@ -1,18 +1,9 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoiZ3VlcmN1c2d1byIsImEiOiJja29vYTVmdXIwMnJjMm5vanBrb2dwZmp1In0.GFGEzzSYk1QNXmqJ-9lhjA';
-var map = new mapboxgl.Map({
-container: 'map', // container ID
-style: 'mapbox://styles/guercusguo/ckqc3h3i600gu18pgwzh0qpjt', // style URL
-center: [7.96339,44.61254], // starting position
-zoom: 12 // starting zoom
-// pitch: 85,
-// bearing: 80,
-});
-// chapters on map
+// ------- CHAPTERS ON MAP ---------
 var chapters = {
 'arte-rupestre-della-valle-camonica-1': {
 duration: 7000,
 bearing: 0,
-center: [7.96339,44.61254],
+center: [10.342637,46.034293],
 zoom: 13,
 speed: 0.6,
 pitch: 40
@@ -20,7 +11,7 @@ pitch: 40
 'arte-rupestre-della-valle-camonica-2': {
 duration: 7000,
 bearing: 0,
-center: [7.9940737,44.6523347],
+center: [10.339044,46.030576],
 zoom: 15,
 speed: 0.6,
 pitch: 40
@@ -28,14 +19,14 @@ pitch: 40
 'villaggio-industriale-di-crespi-dadda-1': {
 duration: 7000,
 bearing: 0,
-center: [8.085396,44.719634],
+center: [9.536066,45.597665],
 zoom: 13,
 speed: 0.6,
 pitch: 40
 },
 'villaggio-industriale-di-crespi-dadda-2': {
 duration: 7000,
-center: [8.247222,44.740324],
+center: [9.535957,45.598542],
 bearing: 0,
 zoom: 12,
 speed: 0.6,
@@ -44,7 +35,7 @@ pitch: 40
 'santa-maria-delle-grazie-e-cenacolo-vinciano-1': {
 duration: 7000,
 bearing: 0,
-center: [8.30319,44.79613],
+center: [9.170618,45.466237],
 zoom: 12,
 speed: 0.6,
 pitch: 40
@@ -52,7 +43,7 @@ pitch: 40
 'santa-maria-delle-grazie-e-cenacolo-vinciano-2': {
 duration: 7000,
 bearing: 0,
-center: [7.96339,44.61254],
+center: [9.17067,45.466001],
 zoom: 13,
 speed: 0.6,
 pitch: 40
@@ -60,7 +51,7 @@ pitch: 40
 'sacri-monti-del-piemonte-e-lombardia-1': {
 duration: 7000,
 bearing: 0,
-center: [7.9940737,44.6523347],
+center: [9.177540,45.974532],
 zoom: 15,
 speed: 0.6,
 pitch: 40
@@ -68,14 +59,14 @@ pitch: 40
 'sacri-monti-del-piemonte-e-lombardia-2': {
 duration: 7000,
 bearing: 0,
-center: [8.085396,44.719634],
+center: [8.792243,45.860223],
 zoom: 13,
 speed: 0.6,
 pitch: 40
 },
 'monte-san-giorgio-1': {
 duration: 7000,
-center: [8.247222,44.740324],
+center: [8.949512,45.919671],
 bearing: 0,
 zoom: 12,
 speed: 0.6,
@@ -84,7 +75,7 @@ pitch: 40
 'monte-san-giorgio-2': {
 duration: 7000,
 bearing: 0,
-center: [8.30319,44.79613],
+center: [8.953134,45.890505],
 zoom: 12,
 speed: 0.6,
 pitch: 40
@@ -92,7 +83,7 @@ pitch: 40
 'mantova-e-sabbioneta-1': {
 duration: 7000,
 bearing: 0,
-center: [7.96339,44.61254],
+center: [10.802641,45.161125],
 zoom: 13,
 speed: 0.6,
 pitch: 40
@@ -100,7 +91,7 @@ pitch: 40
 'mantova-e-sabbioneta-2': {
 duration: 7000,
 bearing: 0,
-center: [7.9940737,44.6523347],
+center: [10.489841,44.999562],
 zoom: 15,
 speed: 0.6,
 pitch: 40
@@ -108,14 +99,14 @@ pitch: 40
 'la-ferrovia-retica-nel-paesaggio-del-abula-e-del-bernina-2': {
 duration: 7000,
 bearing: 0,
-center: [8.085396,44.719634],
+center: [10.125940,46.261320],
 zoom: 13,
 speed: 0.6,
 pitch: 40
 },
 'la-ferrovia-retica-nel-paesaggio-del-abula-e-del-bernina-2': {
 duration: 7000,
-center: [8.247222,44.740324],
+center: [10.128228,46.253887],
 bearing: 0,
 zoom: 12,
 speed: 0.6,
@@ -124,7 +115,7 @@ pitch: 40
 'i-siti-palafitticoli-preistorici-dellarco-alpino-1': {
 duration: 7000,
 bearing: 0,
-center: [8.30319,44.79613],
+center: [8.718441,45.811708],
 zoom: 12,
 speed: 0.6,
 pitch: 40
@@ -132,7 +123,7 @@ pitch: 40
 'i-siti-palafitticoli-preistorici-dellarco-alpino-2': {
 duration: 7000,
 bearing: 0,
-center: [7.96339,44.61254],
+center: [10.494371,45.547956],
 zoom: 13,
 speed: 0.6,
 pitch: 40
@@ -148,14 +139,14 @@ pitch: 40
 'i-longobardi-in-italia-i-luoghi-del-potere-2': {
 duration: 7000,
 bearing: 0,
-center: [8.085396,44.719634],
+center: [8.857443,45.728933],
 zoom: 13,
 speed: 0.6,
 pitch: 40
 },
 'opere-di-difesa-veneziane-1': {
 duration: 7000,
-center: [8.247222,44.740324],
+center: [9.665115,45.703017],
 bearing: 0,
 zoom: 12,
 speed: 0.6,
@@ -164,52 +155,21 @@ pitch: 40
 'opere-di-difesa-veneziane-2': {
 duration: 7000,
 bearing: 0,
-center: [8.30319,44.79613],
+center: [9.663098,45.701167],
 zoom: 12,
 speed: 0.6,
 pitch: 40
-},
-};
-
-var layerList = document.getElementById('menu');
-var inputs = layerList.getElementsByTagName('input');
-// Chapter-scrolling: On every scroll event, check which element is on screen
-window.onscroll = function () {
-var chapterNames = Object.keys(chapters);
-for (var i = 0; i < chapterNames.length; i++) {
-var chapterName = chapterNames[i];
-if (isElementOnScreen(chapterName)) {
-setActiveChapter(chapterName);
-break;
-}
 }
 };
 
-var activeChapterName = 'langa-barolo';
-function setActiveChapter(chapterName) {
-if (chapterName === activeChapterName) return;
-
-map.flyTo(chapters[chapterName]);
-
-document.getElementById(chapterName).setAttribute('class', 'active');
-document.getElementById(activeChapterName).setAttribute('class', '');
-
-activeChapterName = chapterName;
-}
-
-function isElementOnScreen(id) {
-var element = document.getElementById(id);
-var bounds = element.getBoundingClientRect();
-return bounds.top < window.innerHeight && bounds.bottom > 0;
-}
-// End of chapter-scrolling
+// -------- SOURCES ADD ---------
 
 //Load of GeoJSON data
 var geojson;
 function addSource() {
 map.addSource('lombardia_aree', {
 'type': 'geojson',
-'data': '/assets/json/zones.geojson'
+'data': 'assets/json/zones.geojson'
 });
 // Mapbox default DEM source
 map.addSource('mapbox-dem', {
@@ -273,6 +233,42 @@ map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.2 });
 }
 //END of addLayer
 
+// -------- INTERACTIVE SCROLL ----------
+var layerList = document.getElementById('menu');
+var inputs = layerList.getElementsByTagName('input');
+// Chapter-scrolling: On every scroll event, check which element is on screen
+window.onscroll = function () {
+var chapterNames = Object.keys(chapters);
+for (var i = 0; i < chapterNames.length; i++) {
+var chapterName = chapterNames[i];
+if (isElementOnScreen(chapterName)) {
+setActiveChapter(chapterName);
+break;
+}
+}
+};
+
+var activeChapterName = 'arte-rupestre-della-valle-camonica-1';
+function setActiveChapter(chapterName) {
+if (chapterName === activeChapterName) return;
+
+map.flyTo(chapters[chapterName]);
+
+document.getElementById(chapterName).setAttribute('class', 'active');
+document.getElementById(activeChapterName).setAttribute('class', '');
+
+activeChapterName = chapterName;
+}
+
+function isElementOnScreen(id) {
+var element = document.getElementById(id);
+var bounds = element.getBoundingClientRect();
+return bounds.top < window.innerHeight && bounds.bottom > 0;
+}
+// End of chapter-scrolling
+
+
+
 // Basemap switch
 map.on('style.load', function() {
 addSource();
@@ -290,9 +286,9 @@ map.addControl(new mapboxgl.NavigationControl());
 
 // START of popup on click for pointal features
 map.on('load', function () {
-map.on('click', 'paesaggi_aree', function (e) {
+map.on('click', 'lombardia_aree', function (e) {
 var coordinates = e.features[0].geometry.coordinates.slice();
-var description = e.features[0].properties.NOME;
+var description = e.features[0].properties.SITO;
 
 // Ensure that if the map is zoomed out such that multiple
 // copies of the feature are visible, the popup appears
@@ -308,12 +304,12 @@ new mapboxgl.Popup()
 });
 
 // Change the cursor to a pointer when the mouse is over the places layer.
-map.on('mouseenter', 'paesaggi_aree', function () {
+map.on('mouseenter', 'lombardia_aree', function () {
 map.getCanvas().style.cursor = 'pointer';
 });
 
 // Change it back to a pointer when it leaves.
-map.on('mouseleave', 'paesaggi_aree', function () {
+map.on('mouseleave', 'lombardia_aree', function () {
 map.getCanvas().style.cursor = '';
 });
 });
