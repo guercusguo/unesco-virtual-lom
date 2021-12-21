@@ -1,163 +1,144 @@
 // ------- CHAPTERS ON MAP ---------
 var chapters = {
 'arte-rupestre-della-valle-camonica-1': {
-duration: 7000,
 bearing: 0,
 center: [10.342637,46.034293],
-zoom: 14,
-speed: 0.5,
+zoom: 16,
+speed: 0.3,
 pitch: 40
 },
 'arte-rupestre-della-valle-camonica-2': {
-duration: 7000,
 bearing: 0,
 center: [10.339044,46.030576],
-zoom: 15,
-speed: 0.5,
+zoom: 16,
+speed: 0.4,
 pitch: 40
 },
 'villaggio-industriale-di-crespi-dadda-1': {
-duration: 7000,
 bearing: 0,
 center: [9.536066,45.597665],
-zoom: 14,
-speed: 0.5,
+zoom: 16,
+speed: 0.4,
+curve: 1,
 pitch: 40
 },
 'villaggio-industriale-di-crespi-dadda-2': {
-duration: 7000,
 center: [9.535957,45.598542],
 bearing: 0,
-zoom: 15,
-speed: 0.5,
+zoom: 16,
+speed: 0.4,
 pitch: 40
 },
 'santa-maria-delle-grazie-e-cenacolo-vinciano-1': {
-duration: 7000,
 bearing: 0,
 center: [9.170618,45.466237],
-zoom: 14,
-speed: 0.5,
+zoom: 16,
+speed: 0.3,
 pitch: 40
 },
 'santa-maria-delle-grazie-e-cenacolo-vinciano-2': {
-duration: 7000,
 bearing: 0,
 center: [9.17067,45.466001],
-zoom: 13,
-speed: 0.5,
+zoom: 16,
+speed: 0.4,
 pitch: 40
 },
 'sacri-monti-del-piemonte-e-lombardia-1': {
-duration: 7000,
 bearing: 0,
 center: [9.177540,45.974532],
-zoom: 15,
-speed: 0.5,
+zoom: 16,
+speed: 0.3,
 pitch: 40
 },
 'sacri-monti-del-piemonte-e-lombardia-2': {
-duration: 7000,
 bearing: 0,
 center: [8.792243,45.860223],
-zoom: 14,
-speed: 0.5,
+zoom: 16,
+speed: 0.4,
 pitch: 40
 },
 'monte-san-giorgio-1': {
-duration: 7000,
 center: [8.949512,45.919671],
 bearing: 0,
-zoom: 15,
-speed: 0.5,
+zoom: 16,
+speed: 0.4,
 pitch: 40
 },
 'monte-san-giorgio-2': {
-duration: 7000,
 bearing: 0,
 center: [8.953134,45.890505],
-zoom: 14,
-speed: 0.5,
+zoom: 16,
+speed: 0.4,
 pitch: 40
 },
 'mantova-e-sabbioneta-1': {
-duration: 7000,
 bearing: 0,
 center: [10.802641,45.161125],
-zoom: 14,
-speed: 0.5,
+zoom: 16,
+speed: 0.4,
 pitch: 40
 },
 'mantova-e-sabbioneta-2': {
-duration: 7000,
 bearing: 0,
 center: [10.489841,44.999562],
-zoom: 14,
-speed: 0.5,
+zoom: 16,
+speed: 0.4,
 pitch: 40
 },
 'la-ferrovia-retica-nel-paesaggio-del-abula-e-del-bernina-2': {
-duration: 7000,
 bearing: 0,
 center: [10.125940,46.261320],
-zoom: 14,
-speed: 0.5,
+zoom: 16,
+speed: 0.4,
 pitch: 40
 },
 'la-ferrovia-retica-nel-paesaggio-del-abula-e-del-bernina-2': {
-duration: 7000,
 center: [10.128228,46.253887],
 bearing: 0,
-zoom: 12,
-speed: 0.5,
+zoom: 16,
+speed: 0.4,
 pitch: 40
 },
 'i-siti-palafitticoli-preistorici-dellarco-alpino-1': {
-duration: 7000,
 bearing: 0,
 center: [8.718441,45.811708],
-zoom: 14,
-speed: 0.5,
+zoom: 16,
+speed: 0.2,
 pitch: 40
 },
 'i-siti-palafitticoli-preistorici-dellarco-alpino-2': {
-duration: 7000,
 bearing: 0,
 center: [10.494371,45.547956],
-zoom: 14,
-speed: 0.5,
+zoom: 16,
+speed: 0.2,
 pitch: 40
 },
 'i-longobardi-in-italia-i-luoghi-del-potere-1': {
-duration: 7000,
 bearing: 0,
 center: [7.9940737,44.6523347],
-zoom: 14,
-speed: 0.5,
+zoom: 16,
+speed: 0.2,
 pitch: 40
 },
 'i-longobardi-in-italia-i-luoghi-del-potere-2': {
-duration: 7000,
 bearing: 0,
 center: [8.857443,45.728933],
-zoom: 14,
-speed: 0.5,
+zoom: 16,
+speed: 0.3,
 pitch: 40
 },
 'opere-di-difesa-veneziane-1': {
-duration: 7000,
 center: [9.665115,45.703017],
 bearing: 0,
-zoom: 14,
-speed: 0.5,
+zoom: 16,
+speed: 0.3,
 pitch: 40
 },
 'opere-di-difesa-veneziane-2': {
-duration: 7000,
 bearing: 0,
 center: [9.663098,45.701167],
-zoom: 14,
-speed: 0.5,
+zoom: 16,
+speed: 0.4,
 pitch: 40
 }
 };

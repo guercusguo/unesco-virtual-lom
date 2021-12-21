@@ -1,4 +1,8 @@
-body { font-family: 'Titillium Web', sans-serif; margin: 0; padding: 0;}
+body {
+  font-family: 'Titillium Web', sans-serif;
+  margin: 0;
+  padding: 0;
+}
 .bg-light {background-color: #fff!important;}
 #map { position: fixed; top: 0; bottom: 0; width: 61.6%; }
 .map_large {
@@ -8,6 +12,7 @@ body { font-family: 'Titillium Web', sans-serif; margin: 0; padding: 0;}
   position: fixed;
   background: #efefef;
   padding: 10px;
+  font-family: 'Titillium Web', sans-serif;
 }
 #fit {
   display: block;
@@ -23,13 +28,9 @@ body { font-family: 'Titillium Web', sans-serif; margin: 0; padding: 0;}
   background: #297A38;
   opacity: 0.9;
 }
-.map-menu {
-  position: fixed;
-  background: #efefef;
-  padding: 10px;
-}
 
 .legend {
+  font-family: 'Titillium Web', sans-serif;
   background-color: #fff;
   border-radius: 3px;
   bottom: 40px;
@@ -53,7 +54,6 @@ body { font-family: 'Titillium Web', sans-serif; margin: 0; padding: 0;}
   width: 10px;
 }
 
-
 #features {
   width: 38vw;
   margin-left: 62vw;
@@ -62,6 +62,7 @@ body { font-family: 'Titillium Web', sans-serif; margin: 0; padding: 0;}
   background-color: #ffffff;
   transition: 1s ease;
   position: relative;
+  font-family: 'Titillium Web', sans-serif;
 }
 .sidebar_hide {
   width: 0%;
@@ -71,7 +72,7 @@ section {
   line-height: 25px;
   border-bottom: 1px solid #ddd;
   opacity: 0.25;
-  font-size: 13px;
+  font-size: 15px;
 }
 section.active {
   opacity: 1;
@@ -79,6 +80,12 @@ section.active {
 section:last-child {
   border-bottom: none;
   margin-bottom: 10vh;
+}
+section h4{
+  margin: 0 0 3vh 0;
+}
+section p {
+  margin: 5vh 0 0 0;
 }
 .sidebar {
   margin-top: 10px;
@@ -88,69 +95,7 @@ section:last-child {
   max-width: 400px;
   font-weight: bold;
 }
-@media (max-width: 750px) {
-  #features {
-    width: 100vw;
-    margin: 0 auto;
-    background-color:rgba(255,255,255,0.0);
-    color: #000;
-  }
-  .step {
-    padding-bottom: 90vh;
-    offset-position: bottom 10px top 10 px;
-  }
-  #map {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-  }
-}
 
-.legend {
-  background-color: #fff;
-  border-radius: 3px;
-  bottom: 40px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  font: 12px/20px;
-  padding: 10px;
-  position: absolute;
-  right: 10px;
-  z-index: 1;
-}
-
-.legend h4 {
-  margin: 0 0 10px;
-}
-
-.legend div span {
-  border-radius: 50%;
-  display: inline-block;
-  height: 10px;
-  margin-right: 5px;
-  width: 10px;
-}
-
-
-#features {
-  width: 38vw;
-  margin-left: 62vw;
-  height: 100%;
-  overflow-y: scroll;
-  background-color: #ffffff;
-  transition: 1s ease;
-  position: relative;
-}
-.sidebar_hide {
-  width: 0%;
-}
-section {
-  padding: 25px 50px;
-  line-height: 25px;
-  border-bottom: 1px solid #ddd;
-  opacity: 0.25;
-  font-size: 13px;
-}
 section.active {
   opacity: 1;
 }
@@ -158,23 +103,33 @@ section:last-child {
   border-bottom: none;
   margin-bottom: 10vh;
 }
-.sidebar {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
 .mapboxgl-popup  {
   max-width: 400px;
   font-weight: bold;
 }
-@media (max-width: 750px) {
+@media (max-width: 768px) {
   #features {
     width: 100vw;
     margin: 0 auto;
-    background-color:rgba(255,255,255,0.0);
+    background-color:transparent;
     color: #000;
+
+  }
+  section {
+    padding: 5vw 5vw 95vh;
+    border-bottom: 0px ;
+
+  }
+  .mobile-transparent {
+    padding: 5vw 5vw 0vh;
+    line-height: 25px;
+    border-bottom: 1px solid #ddd;
+    opacity: 1;
+    font-size: 15px;
+    background-color:rgba(255,255,255,0.95);
   }
   .step {
-    padding-bottom: 90vh;
+    padding-bottom: 1vh;
     offset-position: bottom 10px top 10 px;
   }
   #map {
