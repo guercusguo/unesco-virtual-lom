@@ -2,8 +2,8 @@
 var chapters = {
 'arte-rupestre-della-valle-camonica-1': {
 bearing: 0,
-center: [10.342637,46.034293],
-zoom: 16,
+center: [10.26440,46.02806],
+zoom: 10,
 speed: 0.3,
 pitch: 40
 },
@@ -85,17 +85,17 @@ zoom: 16,
 speed: 0.4,
 pitch: 40
 },
-'la-ferrovia-retica-nel-paesaggio-del-abula-e-del-bernina-2': {
+'la-ferrovia-retica-nel-paesaggio-del-abula-e-del-bernina-1': {
 bearing: 0,
 center: [10.125940,46.261320],
-zoom: 16,
+zoom: 11,
 speed: 0.4,
 pitch: 40
 },
 'la-ferrovia-retica-nel-paesaggio-del-abula-e-del-bernina-2': {
-center: [10.128228,46.253887],
+center: [10.158377,46.219810],
 bearing: 0,
-zoom: 16,
+zoom: 13,
 speed: 0.4,
 pitch: 40
 },
@@ -115,7 +115,7 @@ pitch: 40
 },
 'i-longobardi-in-italia-i-luoghi-del-potere-1': {
 bearing: 0,
-center: [7.9940737,44.6523347],
+center: [10.225857,45.539511],
 zoom: 16,
 speed: 0.2,
 pitch: 40
@@ -150,7 +150,7 @@ var geojson;
 function addSource() {
 map.addSource('lombardia_aree', {
 'type': 'geojson',
-'data': 'assets/json/zones.geojson '
+'data': '/../assets/json/zones.geojson '
 });
 // Mapbox default DEM source
 map.addSource('mapbox-dem', {
@@ -195,7 +195,7 @@ map.addLayer({
 'visibility': 'visible'
 },
 'paint': {
-'line-width': 2,
+'line-width': 1.5,
 'line-color': [
   'match',
   ['get', 'TIPO_AREA'],
@@ -306,8 +306,8 @@ map.getCanvas().style.cursor = '';
 // Return to map extent
 document.getElementById('fit').addEventListener('click', function () {
 map.fitBounds([
-[8.5994, 44.523151], // southwestern corner of the bounds
-[10.8722, 44.9634] // northeastern corner of the bounds
+[8.5491, 44.9638], // southwestern corner of the bounds
+[10.9207, 46.2511] // northeastern corner of the bounds
 ]);
 });
 // END of Return to map extent
