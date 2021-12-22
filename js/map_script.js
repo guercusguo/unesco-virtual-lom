@@ -150,7 +150,7 @@ var geojson;
 function addSource() {
 map.addSource('lombardia_aree', {
 'type': 'geojson',
-'data': '../assets/json/zones.geojson '
+'data': '../assets/json/zones.geojson'
 });
 // Mapbox default DEM source
 map.addSource('mapbox-dem', {
