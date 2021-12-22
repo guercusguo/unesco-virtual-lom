@@ -2,22 +2,22 @@
 var chapters = {
 'arte-rupestre-della-valle-camonica-1': {
 bearing: 0,
-center: [10.26440,46.02806],
-zoom: 10,
+center: [10.25323,46.02772],
+zoom: 8,
 speed: 0.3,
 pitch: 40
 },
 'arte-rupestre-della-valle-camonica-2': {
 bearing: 0,
 center: [10.339044,46.030576],
-zoom: 16,
+zoom: 12,
 speed: 0.4,
 pitch: 40
 },
 'villaggio-industriale-di-crespi-dadda-1': {
 bearing: 0,
 center: [9.536066,45.597665],
-zoom: 16,
+zoom: 13,
 speed: 0.4,
 curve: 1,
 pitch: 40
@@ -25,9 +25,9 @@ pitch: 40
 'villaggio-industriale-di-crespi-dadda-2': {
 center: [9.535957,45.598542],
 bearing: 0,
-zoom: 16,
+zoom: 12,
 speed: 0.4,
-pitch: 40
+pitch: 0
 },
 'santa-maria-delle-grazie-e-cenacolo-vinciano-1': {
 bearing: 0,
@@ -46,21 +46,21 @@ pitch: 40
 'sacri-monti-del-piemonte-e-lombardia-1': {
 bearing: 0,
 center: [9.177540,45.974532],
-zoom: 16,
+zoom: 13,
 speed: 0.3,
 pitch: 40
 },
 'sacri-monti-del-piemonte-e-lombardia-2': {
 bearing: 0,
 center: [8.792243,45.860223],
-zoom: 16,
+zoom: 12,
 speed: 0.4,
 pitch: 40
 },
 'monte-san-giorgio-1': {
-center: [8.949512,45.919671],
+center: [8.91066,45.87662],
 bearing: 0,
-zoom: 16,
+zoom: 11,
 speed: 0.4,
 pitch: 40
 },
@@ -74,14 +74,14 @@ pitch: 40
 'mantova-e-sabbioneta-1': {
 bearing: 0,
 center: [10.802641,45.161125],
-zoom: 16,
+zoom: 11,
 speed: 0.4,
 pitch: 40
 },
 'mantova-e-sabbioneta-2': {
 bearing: 0,
 center: [10.489841,44.999562],
-zoom: 16,
+zoom: 12,
 speed: 0.4,
 pitch: 40
 },
@@ -101,17 +101,17 @@ pitch: 40
 },
 'i-siti-palafitticoli-preistorici-dellarco-alpino-1': {
 bearing: 0,
-center: [8.718441,45.811708],
-zoom: 16,
+center: [10.56257,45.46226],
+zoom: 10,
 speed: 0.2,
-pitch: 40
+pitch: 60
 },
 'i-siti-palafitticoli-preistorici-dellarco-alpino-2': {
 bearing: 0,
-center: [10.494371,45.547956],
-zoom: 16,
+center: [8.69944,45.80057],
+zoom: 11,
 speed: 0.2,
-pitch: 40
+pitch: 70
 },
 'i-longobardi-in-italia-i-luoghi-del-potere-1': {
 bearing: 0,
@@ -123,23 +123,23 @@ pitch: 40
 'i-longobardi-in-italia-i-luoghi-del-potere-2': {
 bearing: 0,
 center: [8.857443,45.728933],
-zoom: 16,
+zoom: 14,
 speed: 0.3,
 pitch: 40
 },
 'opere-di-difesa-veneziane-1': {
 center: [9.665115,45.703017],
 bearing: 0,
-zoom: 16,
+zoom: 12,
 speed: 0.3,
 pitch: 40
 },
 'opere-di-difesa-veneziane-2': {
 bearing: 0,
 center: [9.663098,45.701167],
-zoom: 16,
+zoom: 10,
 speed: 0.4,
-pitch: 40
+pitch: 0
 }
 };
 
