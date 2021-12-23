@@ -3,7 +3,7 @@ var chapters = {
 'arte-rupestre-della-valle-camonica-1': {
 bearing: 0,
 center: [10.25323,46.02772],
-zoom: 8,
+zoom: 10,
 speed: 0.3,
 pitch: 40
 },
@@ -93,11 +93,11 @@ speed: 0.4,
 pitch: 40
 },
 'la-ferrovia-retica-nel-paesaggio-del-abula-e-del-bernina-2': {
-center: [10.158377,46.219810],
+center: [10.127888,46.254249],
 bearing: 0,
-zoom: 13,
+zoom: 15,
 speed: 0.4,
-pitch: 40
+pitch: 0
 },
 'i-siti-palafitticoli-preistorici-dellarco-alpino-1': {
 bearing: 0,
@@ -128,18 +128,18 @@ speed: 0.3,
 pitch: 40
 },
 'opere-di-difesa-veneziane-1': {
-center: [9.665115,45.703017],
+center: [8.718225,45.811755],
 bearing: 0,
-zoom: 12,
+zoom: 13,
 speed: 0.3,
 pitch: 40
 },
 'opere-di-difesa-veneziane-2': {
 bearing: 0,
-center: [9.663098,45.701167],
-zoom: 10,
+center: [9.663021,45.701215],
+zoom: 16,
 speed: 0.4,
-pitch: 0
+pitch: 85
 }
 };
 
@@ -225,6 +225,7 @@ map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.2 });
 // -------- INTERACTIVE SCROLL ----------
 var layerList = document.getElementById('menu');
 var inputs = layerList.getElementsByTagName('input');
+
 // Chapter-scrolling: On every scroll event, check which element is on screen
 window.onscroll = function () {
 var chapterNames = Object.keys(chapters);
@@ -256,8 +257,6 @@ return bounds.top < window.innerHeight && bounds.bottom > 0;
 }
 // End of chapter-scrolling
 
-
-
 // Basemap switch
 map.on('style.load', function() {
 addSource();
@@ -270,6 +269,7 @@ map.setStyle('mapbox://styles/guercusguo/' + layerId);
 for (var i = 0; i < inputs.length; i++) {
 inputs[i].onclick = switchLayer; }
 // End of Basemap switch
+
 map.addControl(new mapboxgl.NavigationControl());
 
 // START of popup on click for areal features
@@ -277,6 +277,16 @@ map.on('load', function () {
 map.on('click', 'lombardia_aree', function (e) {
 var coordinates = e.features[0].geometry.coordinates.slice();
 var description = e.features[0].properties.SITO;
+
+// Change the cursor to a pointer when the mouse is over the places layer.
+map.on('mouseenter', 'lombardia_aree', function () {
+map.getCanvas().style.cursor = 'pointer';
+});
+
+// Change it back to a pointer when it leaves.
+map.on('mouseleave', 'lombardia_aree', function () {
+map.getCanvas().style.cursor = '';
+});
 
 // Ensure that if the map is zoomed out such that multiple
 // copies of the feature are visible, the popup appears
@@ -290,17 +300,8 @@ new mapboxgl.Popup()
 .setHTML(description)
 .addTo(map);
 });
-
-// Change the cursor to a pointer when the mouse is over the places layer.
-map.on('mouseenter', 'lombardia_aree', function () {
-map.getCanvas().style.cursor = 'pointer';
 });
 
-// Change it back to a pointer when it leaves.
-map.on('mouseleave', 'lombardia_aree', function () {
-map.getCanvas().style.cursor = '';
-});
-});
 // END of popup on click for pointal features
 
 // Return to map extent

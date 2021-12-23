@@ -4,7 +4,12 @@ body {
   padding: 0;
 }
 .bg-light {background-color: #fff!important;}
-#map { position: fixed; top: 0; bottom: 0; width: 61.6%; }
+
+#map { position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 62vw;; }
+
 .map_large {
   width: 100%;
 }
