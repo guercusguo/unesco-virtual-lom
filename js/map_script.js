@@ -128,7 +128,7 @@ speed: 0.3,
 pitch: 40
 },
 'opere-di-difesa-veneziane-1': {
-center: [8.718225,45.811755],
+center: [9.665115,45.703017],
 bearing: 0,
 zoom: 13,
 speed: 0.3,
