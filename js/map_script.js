@@ -156,7 +156,7 @@ map.addSource('lombardia_aree', {
 map.addSource('mapbox-dem', {
 'type': 'raster-dem',
 'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
-'tileSize': 256,
+'tileSize': 512,
 'maxzoom': 14
 });
 } //END of addSource
@@ -219,7 +219,7 @@ map.addLayer({
 // 3D properties
 map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.2 });
 // END of 3D properties
-}
+};
 //END of addLayer
 
 // -------- INTERACTIVE SCROLL ----------
