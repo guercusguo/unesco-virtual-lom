@@ -1,4 +1,4 @@
 # unesco-virtual-lom
 A virtual tour for UNESCO's Lombardy sites.
-Using mapbox and bootstrap.
+Using MapLibre GL JS and bootstrap.
 Mobile friendly.

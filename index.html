@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -8,25 +8,25 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link type="text/css" href="css/style.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
-  <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+  <link href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css" rel="stylesheet" integrity="sha384-uTttxo/aOKbdE5RlD/SPzSDoDmNvGlUYPjONi2MN/b7c9HPSvW07OIuyP7uL6jxK" crossorigin="anonymous">
+  <script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js" integrity="sha384-5+cfbwT0iiub6VsQAdn6yz16nr6sDiQoHx6tm4O8OVYXHYOxcffFmCJBL0dgdvGp" crossorigin="anonymous"></script>
+  <link type="text/css" href="css/style.css" rel="stylesheet">
 </head>
 <body>
   <div id="map" class="map">
-    <div id="zones-legend" class="legend d-none d-md-block">
+    <div id="zones-legend" class="legend">
       <h6>Componenti UNESCO</h6>
       <div><span style="background-color: #f4a582"></span>Core zone</div>
       <div><span style="background-color: #92c5de"></span>Buffer zone</div>
     </div>
   </div>
-  <div class="map-menu d-none d-md-block">
+  <div class="map-menu">
     <div id="menu">
-      <input id="ckqc3h3i600gu18pgwzh0qpjt" type="radio" name="rtoggle" value="satellite" checked="checked">
-      <label for="ckqc3h3i600gu18pgwzh0qpjt">Immagine satellitare</label>
-      <input id="ckrc5h3ak03s518scu3lsusbn" type="radio" name="rtoggle" value="streets">
-      <label for="ckrc5h3ak03s518scu3lsusbn">Carta topografica</label>
+      <input id="satellite" type="radio" name="rtoggle" value="satellite" checked="checked">
+      <label for="satellite">Immagine satellitare</label>
+      <input id="streets" type="radio" name="rtoggle" value="streets">
+      <label for="streets">Carta topografica</label>
     </div>
     <button id="fit">Estensione completa sito UNESCO</button>
   </div>
@@ -43,7 +43,7 @@
     <h4>Arte rupestre della Valle Camonica</h4>
     <p class="step">
       <strong>Il sito preistorico della Valle Camonica, non ancora completamente esplorato, si estende su di un’area di 70 chilometri. Sono state individuate oltre 40.000 figure scavate su circa 2.400 rocce. Questi petroglifi, di cui esistono esempi anche in Spagna, Francia, Svezia e Gran Bretagna, sono di natura simbolica ed evocano la navigazione, la danza, la guerra, l’agricoltura, la magia, ecc.</strong>
-      <img src="assets/img/1/1.webp" class="img-fluid sidebar" alt="Arte rupestre della Valle Camonica">
+      <img src="assets/img/1/1.webp" class="img-fluid sidebar" alt="Arte rupestre della Valle Camonica" width="1400" height="933">
       <br>
       L’espressione artistica dell’<em>Homo sapiens</em> si manifestò in due modi principali: sulle pareti all’interno delle grotte (arte parietale), e su rocce affioranti dal terreno o pareti rocciose esterne alla mercé degli agenti atmosferici (arte rupestre). Le più alte testimonianze mondiali dell’arte parietale preistorica si trovano ad Altamira in Spagna e a Lascaux in Francia, mentre il complesso dell’arte rupestre della Valle Camonica è considerato il più importante a livello mondiale, per la quantità di incisioni, per la sua enorme varietà e per la lunghezza dell’arco temporale che copre.
     </p>
@@ -53,7 +53,7 @@
   <div class ='mobile-transparent'>
     <p class="step">
       La Valle Camonica occupa l’area settentrionale della provincia di Brescia, fra il Lago d’Iseo e i passi del Gavia e del Tonale. L’Arte rupestre è attestata su tutto il territorio della Valle Camonica, la più vasta delle valli bresciane, attraversata dal fiume Oglio: ad oggi sono state censite oltre 180 località con incisioni, per un totale di circa 2000 rocce istoriate, oltre 300.000 grafemi plurimillenari, distribuiti in oltre 30 dei 42 comuni della Valle. Attualmente i parchi in cui si possono ammirare le incisioni rupestri sono otto.
-      <img src="assets/img/1/2.webp" class="img-fluid sidebar" alt="Arte rupestre della Valle Camonica">
+      <img src="assets/img/1/2.webp" class="img-fluid sidebar" alt="Arte rupestre della Valle Camonica" width="933" height="1400" loading="lazy">
       <br>
       Le incisioni sono state realizzate lungo un arco di tempo di oltre 13.000 anni, dalla fine del Paleolitico Superiore alla fine del I millennio a.C., quando si conclude il grande ciclo dell’arte camuna. La pratica di incidere le rocce, tuttavia, prosegue anche dopo la conquista della valle da parte dei Romani. Le raffigurazioni trattano aspetti della spiritualità e della vita quotidiana degli antichi abitanti della Valle e sono importanti per comprendere la storia dell’Uomo: scoprire e conoscere l’arte rupestre camuna permette di compiere un viaggio unico e indimenticabile nella preistoria e protostoria europea per giungere, attraverso le incisioni di età storica (romana, medievale e moderna), sino al XX secolo.
     </p>
@@ -65,7 +65,7 @@
     <p class="step">
       <strong>Crespi d’Adda è un’eccezionale testimonianza di quei “villaggi operai” che nacquero tra il XIX e il XX secolo in Europa e negli Stati Uniti e che sono l’espressione della filosofia degli industriali illuminati, desiderosi di soddisfare i bisogni dei propri operai. Malgrado la sua sopravvivenza sia stata minacciata dall’evoluzione della condizione socio-economiche, il villaggio di Crespi d’Adda è ancora intatto e ha conservato, in parte, la propria funzione industriale.</strong>
       <br>
-      <img src="assets/img/2/1.webp" class="img-fluid sidebar" alt="Villaggio industriale di Crespi d'Adda">
+      <img src="assets/img/2/1.webp" class="img-fluid sidebar" alt="Villaggio industriale di Crespi d'Adda" width="1400" height="933" loading="lazy">
     </p>
   </div>
 </section>
@@ -76,7 +76,7 @@
       <br>
       Il Villaggio di Crespi d’Adda nacque come complesso urbanistico armonioso e integrato al territorio. Furono necessari lavori idraulici per rendere efficiente l’impiego delle acque dell’Adda come risorsa energetica e come elemento indispensabile per alcune fasi di lavorazione. Lo stabilimento era un cotonificio e nell’area industriale-produttiva si trovavano gli edifici per la tessitura, la filatura e la tintura dei tessuti. Magazzini e altri edifici per le attività amministrative erano vicini agli stabili adibiti ad officine, non solo per la fabbrica ma anche per i bisogni del villaggio.
       <br>
-      <img src="assets/img/2/2.webp" class="img-fluid sidebar" alt="Villaggio industriale di Crespi d'Adda">
+      <img src="assets/img/2/2.webp" class="img-fluid sidebar" alt="Villaggio industriale di Crespi d'Adda" width="1400" height="933" loading="lazy">
       Nell’impianto urbanistico i quartieri residenziali erano disposti secondo un ordine gerarchico e razionale che rispecchiava il grado e la funzione dei lavoratori. Oltre alle palazzine per alloggiare le prime maestranze impegnate nell’edificazione e nell’avviamento dell’impianto, vennero realizzate le casette a schiera degli operai, dotate di lavatoio, orto e giardino, e i villini per capireparto e dirigenti. La struttura urbanistica del complesso, perciò, era progettata per ricalcare l’organizzazione del lavoro, testimoniando come i rapporti umani fossero modellati sui rapporti economici. Vi erano poi gli spazi collettivi, con i fabbricati speciali della Chiesa e del Cimitero, e quelli adibiti a scuola, asilo, cooperativa, dopolavoro, mensa, albergo, bagni pubblici, lavatoio e campo sportivo. Il villaggio venne dotato di una uniformità estetica, dove essenzialità e geometria erano ingentilite da decorazioni neogotiche in cotto. Edificio speciale era la trionfale Villa dei Crespi, che esibiva il gusto neo medievale in voga all’epoca e venne dotata di una torre alta 50 metri che risulta evidente tutt’oggi nel paesaggio.
       <br>
     </p>
@@ -87,7 +87,7 @@
     <h4>Santa Maria delle Grazie e Cenacolo Vinciano</h4>
     <p class="step">
       <strong>Il refettorio del Convento di Santa Maria delle Grazie è parte integrante di questo complesso architettonico, iniziato a Milano nel 1463 e rielaborato alla fine del XV secolo dal Bramante. Sulla parete nord vi è l’Ultima Cena, capolavoro ineguagliabile dipinta tra il 1495 e il 1497 da Leonardo da Vinci, il cui lavoro è stato quello di annunciare una nuova era nella storia dell’arte.</strong>
-      <img src="assets/img/3/1.webp" class="img-fluid sidebar" alt="Santa Maria delle Grazie e Cenacolo Vinciano">
+      <img src="assets/img/3/1.webp" class="img-fluid sidebar" alt="Santa Maria delle Grazie e Cenacolo Vinciano" width="1400" height="761" loading="lazy">
     </p>
   </div>
 </section>
@@ -96,7 +96,7 @@
     <p class="step">
       All’interno del complesso conventuale domenicano di Santa Maria delle Grazie è racchiuso un tesoro dell’arte mondiale, l’opera che forse assieme a poche altre rappresenta il senso profondo dell’arte umanistica e allo stesso tempo il manifesto programmatico di Leonardo. Nell’ala occidentale di uno dei tre chiostri del complesso (il Chiostro dei Morti) si trova il Refettorio, noto per la presenza del Cenacolo. L’affresco che ritrae Gesù in compagnia degli Apostoli durante l’Ultima Cena venne creato dal genio di Leonardo da Vinci; esso risale agli ultimi anni dell’ultimo decennio del XV secolo: il maestro vi lavorò tra il 1494 e il 1498.
       <br>
-      <img src="assets/img/3/2.webp" class="img-fluid sidebar" alt="Santa Maria delle Grazie e Cenacolo Vinciano">
+      <img src="assets/img/3/2.webp" class="img-fluid sidebar" alt="Santa Maria delle Grazie e Cenacolo Vinciano" width="1400" height="1050" loading="lazy">
       Per Leonardo è molto importante illustrare i ”moti dell’animo”, infatti nel Trattato della Pittura scrive che il bravo pittore deve saper rappresentare non solo l’aspetto esteriore dell’uomo ma anche i suoi pensieri e le sue emozioni. Per poter dipingere pensieri ed emozioni si devono utilizzare i gesti e gli atteggiamenti, i movimenti delle membra. Leonardo decide quindi di rappresentare l’attimo appena successivo alle parole di Gesù “Uno di voi mi tradirà“. È il momento più drammatico della Cena: ogni apostolo si domanda, e domanda agli altri, chi può essere il traditore. Leonardo si concentra sull’effetto che le parole di Gesù provocano sugli apostoli, sulla loro reazione.
     </p>
   </div>
@@ -106,7 +106,7 @@
     <h4>Sacri Monti del Piemonte e Lombardia</h4>
     <p class="step">
       <strong>I nove Sacri Monti dell’Italia settentrionale sono gruppi di cappelle e altri manufatti architettonici eretti fra il XVI e il XVII secolo, dedicati a differenti aspetti della fede cristiana. In aggiunta al loro significato simbolico e spirituale, possiedono notevoli doti di bellezza, virtù e gradevolezza, e risultano integrati in un ambiente naturale e paesaggistico di colline, boschi e laghi. Contengono inoltre reperti artistici molto importanti (affreschi e statue).</strong>
-      <img src="assets/img/4/1.webp" class="img-fluid sidebar" alt="Sacri Monti del Piemonte e Lombardia">
+      <img src="assets/img/4/1.webp" class="img-fluid sidebar" alt="Sacri Monti del Piemonte e Lombardia" width="1400" height="1050" loading="lazy">
     </p>
   </div>
 </section>
@@ -114,7 +114,7 @@
   <div class ='mobile-transparent'>
     <p class="step">
       I Sacri Monti sono luoghi dell’anima e sono il frutto di un grandioso progetto di sacralizzazione del paesaggio, attuato dalla Chiesa Cattolica tra fine Quattrocento e il Seicento, nella difficile stagione della Controriforma. Dedicati alle storie di Cristo e dei Santi, i Sacri Monti divennero sedi privilegiate di un catechismo raccontato con le immagini, caro alla Chiesa controriformata, sovente illustrato in precedenti luoghi di culto pagani o paleocristiani. Il tema della montagna sacra si sostanzia nell’evocazione del cammino di Cristo verso il Calvario; il percorso che i fedeli sono chiamati a compiere diviene reale pellegrinaggio attraverso un itinerario simbolico di stazioni monumentali che rendono sacro lo spazio naturale.
-      <img src="assets/img/4/2.webp" class="img-fluid sidebar" alt="Sacri Monti del Piemonte e Lombardia">
+      <img src="assets/img/4/2.webp" class="img-fluid sidebar" alt="Sacri Monti del Piemonte e Lombardia" width="1400" height="933" loading="lazy">
       <br>
       In questa ascesa spirituale, la componente architettonica, artistica e quella naturale si fondono in una unità indissolubile che rende il paesaggio strumento integrante dell’azione pedagogica religiosa. Per questo motivo, i Sacri Monti sorsero sempre in posizione sopraelevata, su colline sovrastanti il centro abitato o su alture isolate e impervie, in modo che la difficoltà fisica di raggiungerli divenisse momento di contemplazione e purificazione.
       In Lombardia, in posizione panoramica, si trovano due sacri monti: ad Ossuccio (sulla sponda occidentale del Lago di Como) si erge il Santuario della Madonna del Soccorso; a Varese il Santuario di Santa Maria del Monte, luogo di pellegrinaggio sin dal Medioevo lungo le pendici del Monte Velate.
@@ -127,7 +127,7 @@
     <p class="step">
       <strong>Il Monte San Giorgio ha l’aspetto di una boscosa montagna a piramide, che si affaccia panoramicamente dai suoi 1097 metri di altezza sullo specchio d’acqua del lago. Il primato di tale area naturalistica consiste nella presenza di una altissima concentrazione di fossili, vissuti nel periodo geologico del Triassico Medio. All’epoca, qui vi era un ambiente subtropicale, una sorta di laguna: un braccio di mare profondo soltanto un centinaio di metri con isolotti e banchi di sabbia, separato dal mare aperto da una scogliera di alghe calcaree.</strong>
       <br>
-      <img src="assets/img/5/2.webp" class="img-fluid sidebar" alt="Monte San Giorgio">
+      <img src="assets/img/5/2.webp" class="img-fluid sidebar" alt="Monte San Giorgio" width="1311" height="737" loading="lazy">
       Queste condizioni facilitarono il depositarsi sul fondale delle carcasse di animali morti o travolti dalle onde; grazie alla scarsa circolazione dell’acqua all’interno della laguna e alle basse concentrazioni di ossigeno, i resti di rettili volanti, terrestri e marini ed altri organismi (soprattutto pesci) rimasero intatti e iniziarono a fossilizzarsi, imprigionati negli strati di rocce e di sedimenti. Il sito è condiviso da Italia e Svizzera e le località italiane inserite nella zona dell’iscrizione UNESCO sono in provincia di Varese, e riguardano i comuni di Porto Ceresio, Besano, Viggù.
     </p>
   </div>
@@ -137,7 +137,7 @@
     <p class="step">
       Il Sito si trova a cavallo tra il territorio italiano e quello svizzero, e l’area interessata dall’iscrizione UNESCO ha un valore geo-paleontologico a livello mondiale per i reperti fossili databili al Triassico Medio (tra 242 e 230 milioni di anni fa), i quali permettono di studiare l’evoluzione di una grande va­rietà di fauna marina e terrestre. A partire dal XIX secolo, dagli scavi sono stati rinve­nuti esemplari di specie rare e uniche.
       <br>
-      <img src="assets/img/5/1.webp" class="img-fluid sidebar" alt="Monte San Giorgio">
+      <img src="assets/img/5/1.webp" class="img-fluid sidebar" alt="Monte San Giorgio" width="1220" height="689" loading="lazy">
     </p>
   </div>
 </section>
@@ -146,7 +146,7 @@
     <h4>Mantova e Sabbioneta</h4>
     <p class="step">
       <strong>Antichissimo centro etrusco, Mantova fiorì sotto la signoria dei Gonzaga (XIV-XVII secolo) e divenne esempio eccelso delle raffinate corti rinascimentali italiane. Sabbioneta è considerata il modello della “città ideale”, e in essa si realizzano i valori dell’Umanesimo. Mantova e Sabbioneta esercitarono un’influenza sull’urbanistica, l’architettura, l’arte mondiale nei secoli a seguire.</strong>
-      <img src="assets/img/6/1.webp" class="img-fluid sidebar" alt="Mantova e Sabbioneta">
+      <img src="assets/img/6/1.webp" class="img-fluid sidebar" alt="Mantova e Sabbioneta" width="1400" height="744" loading="lazy">
     </p>
   </div>
 </section>
@@ -154,7 +154,7 @@
   <div class ='mobile-transparent'>
     <p class="step">
       Lo sviluppo della città di Mantova si misura sia dall’espandersi della cinta muraria che dal progressivo arricchimento architettonico e monumentale. L’arrivo al potere della famiglia Gonzaga portò con sé il vento di rinnovamento che diffuse arte e architettura come ideali non solo estetici ma anche di vita. L’apice della trasformazione prestigiosa ebbe luogo grazie ai gusti dei potenti e al lavoro di grandi artisti, maestri architetti e pittori quali Andrea Mantegna, Leon Battista Alberti e Giulio Romano. Esempi importanti di questo nuovo modello di vita urbana furono e rimangono fino a noi oggi: il Castello di San Giorgio (dove Ludovico III trasferì la propria residenza e dove sono presenti i celebri affreschi di Mantegna), la Chiesa di San Sebastiano e la Basilica di Sant’Andrea, Palazzo Te.
-      <img src="assets/img/6/2.webp" class="img-fluid sidebar" alt="Mantova e Sabbioneta">
+      <img src="assets/img/6/2.webp" class="img-fluid sidebar" alt="Mantova e Sabbioneta" width="1400" height="934" loading="lazy">
     </p>
   </div>
 </section>
@@ -163,7 +163,7 @@
     <h4>La Ferrovia Retica nel paesaggio dell'Abula e del Bernina</h4>
     <p class="step">
       <strong>La Ferrovia Retica è un esempio eccezionale di tecnologia, ingegneria e architettura, un unicum armonico e spettacolare in cui l’intervento umano è riuscito ad integrarsi in un paesaggio di alta montagna.<br>
-        <img src="assets/img/7/1.webp" class="img-fluid sidebar" alt="La Ferrovia Retica nel paesaggio del Abula e del Bernina">
+        <img src="assets/img/7/1.webp" class="img-fluid sidebar" alt="La Ferrovia Retica nel paesaggio del Abula e del Bernina" width="1400" height="933" loading="lazy">
         Realizzate tra la fine del secolo XIX e l’inizio del XX secolo per collegare e aprire le zone delle Alpi centrali al resto dell’Europa, le due tratte ferroviarie dell’Albula e del Bernina, ora unificate dalla Compagnia Ferroviaria Retica, si distinguono per il valore storico, quale adattamento umano ad un contesto naturale difficile; per il valore socio-economico, per aver sbloccato l’isolamento delle comunità montane favorendo la circolazione di idee, culture e persone; per il loro significato nella storia della tecnologia, quale esempio di ferrovia a scartamento ridotto.</strong>
       </p>
     </div>
@@ -173,7 +173,7 @@
       <p class="step">
         La Ferrovia Retica è nota come trasversale alpina tra le più ripide e alte al mondo, con 55 gallerie e 196 viadotti. Il Sito ha carattere transfrontaliero, cioè compete sia all’Italia che alla Svizzera perché l’itinerario della Ferrovia Retica, funzionante in tutte le stagioni, si snoda in entrambe le nazioni.
         <br>
-        <img src="assets/img/7/2.webp" class="img-fluid sidebar" alt="La Ferrovia Retica nel paesaggio del Abula e del Bernina">
+        <img src="assets/img/7/2.webp" class="img-fluid sidebar" alt="La Ferrovia Retica nel paesaggio del Abula e del Bernina" width="1024" height="678" loading="lazy">
         In territorio lombardo, la ferrovia del Bernina, -inaugurata nel 1910 - collega St. Morizt a Tirano in provincia di Sondrio. Si sviluppa in un tracciato in forte pendenza e raggiunge la quota oltre 2000 m s.l.m. superando il Passo del Bernina e offrendo spettacolari viste su scintillanti ghiacciai perenni, ombrose gole boscose, pascoli in quota.
       </p>
     </div>
@@ -184,7 +184,7 @@
       <p class="step">
         <strong>I siti palafitticoli preistorici dell’arco alpino sono dislocati tra Svizzera, Austria, Francia, Germania, Italia e Slovenia, e punteggiano un territorio vasto ma uniformemente contraddistinto da zone umide, le quali hanno permesso l’eccezionale conservazione dei resti delle comunità preistoriche. Questo gruppo di aree archeologiche, riconosciuto di valore universale nel 2011, comprende 111 villaggi risalenti tra 5000 e il 500 a.C.; tra questi, 19 sono in Italia, in particolare attorno al Lago di Garda e a quello di Varese, e dislocati in cinque regioni, Lombardia, Veneto, Piemonte, Friuli-Venezia Giulia e Trentino-Alto Adige. La loro testimonianza permette di far luce sul profilo delle comunità preistoriche europee con un ricco patrimonio di reperti e resti di insediamenti su palafitte.</strong>
         <br>
-        <img src="assets/img/8/1.webp" class="img-fluid sidebar" alt="I siti palafitticoli preistorici dell’arco alpino">
+        <img src="assets/img/8/1.webp" class="img-fluid sidebar" alt="I siti palafitticoli preistorici dell’arco alpino" width="1400" height="1050" loading="lazy">
         Gli insediamenti palafitticoli sono siti spondali situati in prossimità di laghi, fiumi o torbiere. La loro ubicazione in ambienti anaerobici (privi di ossigeno) ha permesso una eccellente conservazione di materiali organici che hanno restituito numerose informazioni relative al mondo delle prime comunità agricole europee. Pratiche agricole, allevamento e innovazioni tecnologiche sono state ricostruite con un elevato grado di precisione, fornendo uno spaccato della vita quotidiana tra il 5000 e il 500 a.C. Questo arco temporale, superiore ai 4000 anni, coincide con una delle fasi più importanti della storia dell’umanità.
       </p>
     </div>
@@ -194,7 +194,7 @@
       <p class="step">
         Le palafitte, organizzate in gruppi o in villaggi, sono delle capanne sostenute da pali. Queste strutture, dotate di una piattaforma lignea orizzontale, potevano erigersi direttamente su un lago, una palude, un corso d’acqua oppure essere collocate sulla sponda di uno di essi. A seconda del tipo di terreno, del clima e di specifiche esigenze degli abitanti sono state realizzate palafitte su bonifica (costruite sul terreno) e aeree (sospese sopra il pelo dell’acqua). Diversamente dalle capanne su bonifica, contraddistinte da una base di pali orizzontali sovrapposti, quelle aeree sono caratterizzate da pali di sostegno verticale, la cui estremità inferiore è appuntita per essere conficcata più facilmente nel terreno.
         <br>
-        <img src="assets/img/8/2.webp" class="img-fluid sidebar" alt="I siti palafitticoli preistorici dell’arco alpino">
+        <img src="assets/img/8/2.webp" class="img-fluid sidebar" alt="I siti palafitticoli preistorici dell’arco alpino" width="1400" height="1050" loading="lazy">
         Le strutture aeree potevano essere congiunte tra loro o alla terraferma attraverso ponti; in alternativa, il tavolato orizzontale poteva essere unico, esteso all’intero gruppo di abitazioni. Come materiali da costruzione oltre a pali di legno e tronchi d’albero venivano impiegati paglia e canne. Vivere in villaggi come questi aveva diversi vantaggi: permetteva di adattarsi alle variazioni dei livelli dei corsi d’acqua o dei laghi, consentiva di rimanere vicino alle fonti di acqua e di cibo e di difendersi da nemici e animali selvatici.
         <br>
         In Lombardia sul Lago di Varese sono state identificate le strutture palafitticole più antiche, risalenti all'inizio del Neolitico, mentre nell'area del Lago di Garda si trova la maggiore concentrazione di palafitte con più di 30 abitanti.
@@ -210,7 +210,7 @@
         <br>
         Quando, nel 568, i Longobardi entrarono nella penisola italiana condotti da re Alboino, quel che trovarono furono i resti materiali, a livello di strutture, e immateriali, a livello di tradizioni istituzionali ed eredità culturale, del mondo romano decaduto. Trovarono altresì un territorio che presentava molte caratteristiche positive, sia dal punto di vista fisico e climatico, sia per la sua funzione di crocevia tra Oriente e Occidente. Il processo di integrazione sul territorio e con le genti da un lato, dall’altro l’innestarsi di una serie di novità di matrice germanica, furono il collante che garantì nella storia una certa continuità tra l’Età Antica e il Medioevo. Una delle manifestazioni pratiche di tale fenomeno di integrazione e sintesi fu l’uso che i Longobardi fecero dei resti antichi, il reimpiego di materiali lapidei e architettonici più antichi derivanti da necropoli o edifici abbandonati, soprattutto di epoca romana. Nei luoghi dove si insediarono, i Longobardi trovarono molte risorse di questo tipo e di esse procedettero al riuso, talvolta, come nel caso del castrum di Castelseprio, in modo conservativo rispetto alla funzionalità (riutilizzarono le strutture della fortificazione per la medesima funzione), talaltra in modo innovativo, come nel caso dell’utilizzo delle antiche lastre marmoree del Tempietto di Cividale del Friuli, poste a pavimentazione del presbiterio.
         <br>
-        <img src="assets/img/9/2.webp" class="img-fluid sidebar" alt="I Longobardi in Italia. I luoghi del potere">
+        <img src="assets/img/9/2.webp" class="img-fluid sidebar" alt="I Longobardi in Italia. I luoghi del potere" width="1400" height="1051" loading="lazy">
         In Lombardia, troviamo il complesso monastico di San Salvatore-Santa Giulia a Brescia, uno dei maggiori esempi di architettura religiosa alto medioevale, testimonianza, dal punto di vista sociale, dell'appoggio dei Longobardi ai movimenti monastici.
       </p>
     </div>
@@ -219,7 +219,7 @@
     <div class ='mobile-transparent'>
       <p class="step">
         A Castelseprio (VA) si trova l’area del castrum, avamposto militare romano e ostrogoto, trasformato dai Longobardi prima in una stazione commerciale e successivamente in un luogo di preghiera, con l'edificazione della Basilica di San Giovanni Evangelista, della Chiesa di Santa Maria foris portas e del Monastero di Torba.
-        <img src="assets/img/9/1.webp" class="img-fluid sidebar" alt="I Longobardi in Italia. I luoghi del potere">
+        <img src="assets/img/9/1.webp" class="img-fluid sidebar" alt="I Longobardi in Italia. I luoghi del potere" width="1400" height="932" loading="lazy">
       </p>
     </div>
   </section>
@@ -229,7 +229,7 @@
       <p class="step">
         <strong>Le Opere di difesa veneziane tra il XVI ed il XVII secolo: Stato da Terra – Stato da Mar Occidentale formano un sito seriale transnazionale presentato dall’Italia insieme con Croazia e Montenegro. Il sito raccoglie un insieme straordinario dei più rappresentativi sistemi difensivi alla moderna realizzati dalla Repubblica di Venezia, progettati dopo la scoperta della polvere da sparo e dislocati lungo lo Stato de Terra e lo Stato de Mare.</strong>
         <br>
-        <img src="assets/img/10/1.webp" class="img-fluid sidebar" alt="Opere di difesa veneziane tra il XVI ed il XVII secolo: Stato da Terra – Stato da Mar Occidentale">
+        <img src="assets/img/10/1.webp" class="img-fluid sidebar" alt="Opere di difesa veneziane tra il XVI ed il XVII secolo: Stato da Terra – Stato da Mar Occidentale" width="1400" height="712" loading="lazy">
       </p>
     </div>
   </section>
@@ -238,7 +238,7 @@
       <p class="step">
         In Lombardia, a Bergamo, la Città Alta è circondata da mura, capolavoro di ingegneria militare costruite dai Veneziani nel corso della dominazione cinquecentesca in Lombardia; le mura di Bergamo, volute per ragioni politiche e mai utilizzate come reale difesa, appaiono come una gigantesca fortezza con baluardi dotati di vie di fuga e strade per rifornimenti, postazioni di cannoni, saloni per le truppe e per il deposito di munizioni.
         <br>
-        <img src="assets/img/10/2.webp" class="img-fluid sidebar" alt="Opere di difesa veneziane tra il XVI ed il XVII secolo: Stato da Terra – Stato da Mar Occidentale">
+        <img src="assets/img/10/2.webp" class="img-fluid sidebar" alt="Opere di difesa veneziane tra il XVI ed il XVII secolo: Stato da Terra – Stato da Mar Occidentale" width="1400" height="937" loading="lazy">
         La città fortificata di Bergamo rappresenta l’estremità più occidentale del sistema di difesa dello Stato di Terra della Serenissima per difendersi dalle potenze europee. Le mura di Bergamo vennero costruite fra il 1561 e il 1588 dalla Repubblica di Venezia per arginare gli attacchi nemici, anche se non subì mai assedi. Le fortificazioni hanno un tracciato di oltre 6 chilometri e comprende 14 baluardi, 2 piattaforme, 100 aperture per bocche da fuoco, 2 polveriere, 4 porte. Alcuni tratti di fortificazione erano già presenti in epoca romana ma agli inizi del Cinquecento si trovavano in condizioni di estrema decadenza e vennero quasi totalmente sostituite dalla nuova opera. Oggi appaiono come una gigantesca fortezza con baluardi dotati di vie di fuga e strade per rifornimenti, postazioni di cannoni, saloni per le truppe e per il deposito di munizioni.
       </p>
       <div class="d-flex justify-content-evenly">
@@ -250,18 +250,7 @@
     </div>
   </div>
 </section>
-<script>
-mapboxgl.accessToken = 'pk.eyJ1IjoiZ3VlcmN1c2d1byIsImEiOiJja3k5eGdscHMwMDFpMm5vZzR3YXI0bGhtIn0.k-JbV0CouQPR-ffsMp4DzA';
-var map = new mapboxgl.Map({
-  container: 'map', // container ID
-  style: 'mapbox://styles/guercusguo/ckqc3h3i600gu18pgwzh0qpjt', // style URL
-  center: [10.25323,46.02772], // starting position
-  zoom: 10 // starting zoom
-  // pitch: 85,
-  // bearing: 80,
-});
-</script>
-<script language="JavaScript" type="text/JavaScript" src="js/map_script.js"></script>
+<script src="js/map_script.js"></script>
 </body>
 
 </html>

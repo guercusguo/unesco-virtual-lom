@@ -1,3 +1,30 @@
+// ------- BASEMAPS AND MAP ---------
+// Token-free basemaps: the radio button ids in #menu match these keys.
+var basemaps = {
+'satellite': {
+'version': 8,
+'sources': {
+'satellite': {
+'type': 'raster',
+'tiles': ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'],
+'tileSize': 256,
+'maxzoom': 19,
+'attribution': 'Imagery &copy; Esri, Maxar, Earthstar Geographics'
+}
+},
+'layers': [{ 'id': 'satellite', 'type': 'raster', 'source': 'satellite' }]
+},
+'streets': 'https://tiles.openfreemap.org/styles/liberty'
+};
+
+var map = new maplibregl.Map({
+container: 'map', // container ID
+style: basemaps['satellite'],
+center: [10.25323,46.02772], // starting position
+zoom: 10, // starting zoom
+maxPitch: 85
+});
+
 // ------- CHAPTERS ON MAP ---------
 var chapters = {
 'arte-rupestre-della-valle-camonica-1': {
@@ -152,12 +179,14 @@ map.addSource('lombardia_aree', {
 'type': 'geojson',
 'data': 'assets/json/zones.geojson'
 });
-// Mapbox default DEM source
-map.addSource('mapbox-dem', {
+// Open DEM source (Terrain Tiles on AWS, terrarium encoding)
+map.addSource('terrain-dem', {
 'type': 'raster-dem',
-'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
-'tileSize': 512,
-'maxzoom': 14
+'tiles': ['https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png'],
+'encoding': 'terrarium',
+'tileSize': 256,
+'maxzoom': 15,
+'attribution': 'Elevation: <a href="https://github.com/tilezen/joerd/blob/master/docs/attribution.md">Tilezen Joerd</a>'
 });
 } //END of addSource
 
@@ -207,17 +236,16 @@ map.addLayer({
 ],
 }
 });
-map.addLayer({
-'id': 'sky',
-'type': 'sky',
-'paint': {
-'sky-type': 'atmosphere',
-'sky-atmosphere-sun': [0.0, 0.0],
-'sky-atmosphere-sun-intensity': 15
-}
+map.setSky({
+'sky-color': '#7fb2e5',
+'horizon-color': '#ffffff',
+'fog-color': '#ffffff',
+'sky-horizon-blend': 0.6,
+'horizon-fog-blend': 0.6,
+'fog-ground-blend': 0.4
 });
 // 3D properties
-map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.2 });
+map.setTerrain({ 'source': 'terrain-dem', 'exaggeration': 1.2 });
 // END of 3D properties
 };
 //END of addLayer
@@ -226,35 +254,27 @@ map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.2 });
 var layerList = document.getElementById('menu');
 var inputs = layerList.getElementsByTagName('input');
 
-// Chapter-scrolling: On every scroll event, check which element is on screen
-window.onscroll = function () {
-var chapterNames = Object.keys(chapters);
-for (var i = 0; i < chapterNames.length; i++) {
-var chapterName = chapterNames[i];
-if (isElementOnScreen(chapterName)) {
-setActiveChapter(chapterName);
-break;
-}
-}
-};
-
+// Chapter-scrolling: the active chapter is the section crossing the middle of the screen
 var activeChapterName = 'arte-rupestre-della-valle-camonica-1';
 function setActiveChapter(chapterName) {
 if (chapterName === activeChapterName) return;
 
 map.flyTo(chapters[chapterName]);
 
-document.getElementById(chapterName).setAttribute('class', 'active');
-document.getElementById(activeChapterName).setAttribute('class', '');
+document.getElementById(chapterName).classList.add('active');
+document.getElementById(activeChapterName).classList.remove('active');
 
 activeChapterName = chapterName;
 }
 
-function isElementOnScreen(id) {
-var element = document.getElementById(id);
-var bounds = element.getBoundingClientRect();
-return bounds.top < window.innerHeight && bounds.bottom > 0;
-}
+var chapterObserver = new IntersectionObserver(function (entries) {
+entries.forEach(function (entry) {
+if (entry.isIntersecting) setActiveChapter(entry.target.id);
+});
+}, { rootMargin: '-50% 0px -50% 0px' });
+Object.keys(chapters).forEach(function (chapterName) {
+chapterObserver.observe(document.getElementById(chapterName));
+});
 // End of chapter-scrolling
 
 // Basemap switch
@@ -264,42 +284,33 @@ addLayer();
 });
 function switchLayer(layer) {
 var layerId = layer.target.id;
-map.setStyle('mapbox://styles/guercusguo/' + layerId);
+// Full reload so that 'style.load' fires and sources/layers are added again
+map.setStyle(basemaps[layerId], { diff: false });
 };
 for (var i = 0; i < inputs.length; i++) {
 inputs[i].onclick = switchLayer; }
 // End of Basemap switch
 
-map.addControl(new mapboxgl.NavigationControl());
+map.addControl(new maplibregl.NavigationControl());
 
 // START of popup on click for areal features
-map.on('load', function () {
-map.on('click', 'lombardia_aree', function (e) {
-var coordinates = e.features[0].geometry.coordinates.slice();
+map.on('click', 'fill_area', function (e) {
 var description = e.features[0].properties.SITO;
 
-// Change the cursor to a pointer when the mouse is over the places layer.
-map.on('mouseenter', 'lombardia_aree', function () {
+new maplibregl.Popup()
+.setLngLat(e.lngLat)
+.setText(description)
+.addTo(map);
+});
+
+// Change the cursor to a pointer when the mouse is over the areas layer.
+map.on('mouseenter', 'fill_area', function () {
 map.getCanvas().style.cursor = 'pointer';
 });
 
 // Change it back to a pointer when it leaves.
-map.on('mouseleave', 'lombardia_aree', function () {
+map.on('mouseleave', 'fill_area', function () {
 map.getCanvas().style.cursor = '';
-});
-
-// Ensure that if the map is zoomed out such that multiple
-// copies of the feature are visible, the popup appears
-// over the copy being pointed to.
-while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-  coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-}
-
-new mapboxgl.Popup()
-.setLngLat(coordinates)
-.setHTML(description)
-.addTo(map);
-});
 });
 
 // END of popup on click for pointal features
@@ -309,6 +320,6 @@ document.getElementById('fit').addEventListener('click', function () {
 map.fitBounds([
 [8.5491, 44.9638], // southwestern corner of the bounds
 [10.9207, 46.2511] // northeastern corner of the bounds
-]);
+], { pitch: 0, bearing: 0 });
 });
 // END of Return to map extent
